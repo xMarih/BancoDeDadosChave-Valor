@@ -41,19 +41,32 @@ public class main {
 		RandomAccessFile arq;
 
 		try {
+
 			arq = new RandomAccessFile(
 					"C:\\Users\\mariana\\eclipse-workspace\\Banco de Dados Chave-Valor\\src\\dados" + mestre, "rw");
 			HashPrincipal ab = new HashPrincipal(n, dir, buck);
-
 			do {
+
 				System.out.println("Menu");
 				System.out.println(
-						" " + "[1] Criar\n " + "[2] Apagar\n " + "[3] Mostrar registros\n " + "[4] Atualizar\n" + "[5] Comprimir\n" + "[6] Descomprimir\n");
-				op = sc.nextInt();
+				"[1] Criar\n " + 
+				"[2] Apagar\n " + 
+				"[3] Mostrar registros\n " + 
+				"[4] Atualizar\n" +
+				"[5] Comprimir\n" + 
+				"[6] Descomprimir\n" + 
+				"[0] SAIR");
 
+				op = sc.nextInt();
 				pt.setm(m);
 
-				if (op == 1) {
+				switch (op) {
+
+				case 0:
+					System.out.print("Encerrando...");
+					break;
+				////////////////////////////////////////////////////////////////////////
+				case 1:
 					do {
 						System.out.print("CPF: ");
 						cpf = sc.nextInt();
@@ -96,7 +109,9 @@ public class main {
 
 					System.out.printf(" Tempo em milessegundos: %d\n", soma);
 
-				} else if (op == 2) {
+					break;
+				////////////////////////////////////////////////////////////////
+				case 2:
 					System.out.println("CPF que deseja apagar: ");
 					cpf = sc.nextInt();
 
@@ -112,7 +127,10 @@ public class main {
 					// tempoTotal = soma / 1000;
 					System.out.println(soma + " milessegundos");
 
-				} else if (op == 3) {
+					break;
+				////////////////////////////////////////////////////////////////
+
+				case 3:
 					System.out.println("\t[1] Imprimir arquivos: \n\t[2] Buscar registro: ");
 					int op1 = sc.nextInt();
 					if (op1 == 1) {
@@ -136,21 +154,47 @@ public class main {
 						System.out.println(soma + " milessegundos");
 					}
 
-				} else if (op == 4) {
+					break;
+
+				//////////////////////////////////////////////////////////////
+				case 4:
 					System.out.println("Informe CPF que deseja atualizar: ");
 					cpf = sc.nextInt();
 					// int buscaCPF = (int) ab.busca(cpf);
 					// System.out.println(buscaCPF);
-					atualizar(arq, cpf, m);
+					HashPrincipal.atualizar(arq, cpf, m);
+
+					// atualizar(arq, cpf, m);
+
+					break;
+				//////////////////////////////////////////////////////
+				case 5:
+					//TODO comprimir
+					
+					
+					
+
+				//////////////////////////////////////////////////////
+					break;
+				case 6:
+					//TODO descomprimir
+					
+					
+					
+
+				//////////////////////////////////////////////////////
+					break;
+				
+				default:
+					System.out.println("Opção Inválida");
+					break;
 				}
-
-				System.out.println("Deseja continuar?:\n [1] Sim\t [2] Não ");
-				a = sc.nextInt();
-
-			} while (a == 1);
+			} while (op != 0);
 			System.out.println("\n-------------------------------------------");
+			System.out.println("\nENCERRADO");
 
 			arq.close();
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -159,40 +203,4 @@ public class main {
 
 	}
 
-	public static void atualizar(RandomAccessFile arq, int cpf, int m) throws IOException {
-
-		Scanner sc = new Scanner(System.in);
-
-		long soma = 0, tempoInicial, tempoFinal, total = 0;
-		// float tempoTotal;
-		String nome, data, sexo, ant;
-		Pntuario obj = new Pntuario();
-
-		System.out.print("Nome: \n");
-		nome = sc.nextLine();
-		sc.nextLine();
-
-		System.out.print("Data de nascimento: \n");
-		data = sc.nextLine();
-
-		sc.nextLine();
-		System.out.print("Sexo: \n");
-		sexo = sc.nextLine();
-
-		sc.nextLine();
-		System.out.print("Anotação: \n");
-		ant = sc.nextLine();
-
-		tempoInicial = System.currentTimeMillis();
-		obj.setm(m);
-		obj.update(arq, cpf, nome, data, sexo, ant);
-
-		tempoFinal = System.currentTimeMillis();
-
-		total = tempoFinal - tempoInicial;
-		soma = soma + total;
-		// tempoTotal = soma / 1000;
-		System.out.println(soma + " milessegundos");
-
-	}
 }
