@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public class Pntuario {
-	private int cpf;
+	private int cpf;   
 	private String nome;
 	private String dataNasc;
 	private String sexo;
