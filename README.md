@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # BancoDeDadosChave-Valor
 Trabalho Final desenvolvido para a disciplina de AED3
 
@@ -19,7 +19,7 @@ Mais detalhes em "Proposta.txt"
 
 
 
-Desenvolvedores: 
+# Desenvolvedores: 
 
 Abraão Melo Fagundes
 
@@ -60,4 +60,3 @@ Guilherme Marcos Pereira Goncalves
 
 Mariana Eliza Alves Costa
 
->>>>>>> 3d150eda2f47e8a7bbc807f74cf093f50effc694
