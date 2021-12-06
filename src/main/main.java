@@ -5,43 +5,7 @@ import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 public class main {
-    //atualiza registro
-	public static void atualizar(RandomAccessFile arq, int cpf, int m) throws IOException {
-
-		Scanner sc = new Scanner(System.in);
-
-		long soma = 0, tempoInicial, tempoFinal, total = 0;
-		//float tempoTotal;
-		String nome, data, sexo, ant;
-		Pntuario obj = new Pntuario();
-
-		System.out.print("Nome: \n");
-		nome = sc.nextLine();
-		sc.nextLine();
-
-		System.out.print("Data de nascimento: \n");
-		data = sc.nextLine();
-
-		sc.nextLine();
-		System.out.print("Sexo: \n");
-		sexo = sc.nextLine();
-
-		sc.nextLine();
-		System.out.print("Anotação: \n");
-		ant = sc.nextLine();
-		
-		tempoInicial = System.currentTimeMillis();
-		obj.setm(m);
-		obj.update(arq, cpf, nome, data, sexo, ant);
-		
-		tempoFinal = System.currentTimeMillis();
-
-		total = tempoFinal - tempoInicial;
-		soma = soma + total;
-		//tempoTotal = soma / 1000;
-		System.out.println(soma + " milessegundos");
-
-	}
+	// atualiza registro
 
 	public static void main(String[] args) {
 
@@ -71,20 +35,20 @@ public class main {
 		System.out.println("Informe o valor de n: ");
 		int n = sc.nextInt();
 		sc.nextLine();
-		//System.out.println("Informe a P.G.: ");
-		//byte pg = sc.nextByte();
+		// System.out.println("Informe a P.G.: ");
+		// byte pg = sc.nextByte();
 		sc.nextLine();
 		RandomAccessFile arq;
 
 		try {
-			arq = new RandomAccessFile("C:\\Users\\mariana\\eclipse-workspace\\Banco de Dados Chave-Valor\\src\\dados" + mestre,
-					"rw");
+			arq = new RandomAccessFile(
+					"C:\\Users\\mariana\\eclipse-workspace\\Banco de Dados Chave-Valor\\src\\dados" + mestre, "rw");
 			HashPrincipal ab = new HashPrincipal(n, dir, buck);
 
 			do {
 				System.out.println("Menu");
 				System.out.println(
-						" " + "[1] Criar\n " + "[2] Apagar\n " + "[3] Mostrar registros\n " + "[4] Atualizar\n");
+						" " + "[1] Criar\n " + "[2] Apagar\n " + "[3] Mostrar registros\n " + "[4] Atualizar\n" + "[5] Comprimir\n" + "[6] Descomprimir\n");
 				op = sc.nextInt();
 
 				pt.setm(m);
@@ -145,7 +109,7 @@ public class main {
 					tempoFinal = System.currentTimeMillis();
 					total = tempoFinal - tempoInicial;
 					soma = soma + total;
-					//tempoTotal = soma / 1000;
+					// tempoTotal = soma / 1000;
 					System.out.println(soma + " milessegundos");
 
 				} else if (op == 3) {
@@ -157,7 +121,7 @@ public class main {
 						ab.imprime();
 						tempoFinal = System.currentTimeMillis();
 						soma = soma + total;
-						//tempoTotal = soma / 1000;
+						// tempoTotal = soma / 1000;
 						System.out.println(soma + " milessegundos");
 					} else if (op1 == 2) {
 						System.out.println("CPF que deseja buscar: ");
@@ -168,15 +132,15 @@ public class main {
 						tempoFinal = System.currentTimeMillis();
 						total = tempoFinal - tempoInicial;
 						soma = soma + total;
-						//tempoTotal = soma / 1000;
+						// tempoTotal = soma / 1000;
 						System.out.println(soma + " milessegundos");
 					}
 
 				} else if (op == 4) {
 					System.out.println("Informe CPF que deseja atualizar: ");
 					cpf = sc.nextInt();
-					//int buscaCPF = (int) ab.busca(cpf);
-					//System.out.println(buscaCPF);
+					// int buscaCPF = (int) ab.busca(cpf);
+					// System.out.println(buscaCPF);
 					atualizar(arq, cpf, m);
 				}
 
@@ -192,6 +156,43 @@ public class main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+	}
+
+	public static void atualizar(RandomAccessFile arq, int cpf, int m) throws IOException {
+
+		Scanner sc = new Scanner(System.in);
+
+		long soma = 0, tempoInicial, tempoFinal, total = 0;
+		// float tempoTotal;
+		String nome, data, sexo, ant;
+		Pntuario obj = new Pntuario();
+
+		System.out.print("Nome: \n");
+		nome = sc.nextLine();
+		sc.nextLine();
+
+		System.out.print("Data de nascimento: \n");
+		data = sc.nextLine();
+
+		sc.nextLine();
+		System.out.print("Sexo: \n");
+		sexo = sc.nextLine();
+
+		sc.nextLine();
+		System.out.print("Anotação: \n");
+		ant = sc.nextLine();
+
+		tempoInicial = System.currentTimeMillis();
+		obj.setm(m);
+		obj.update(arq, cpf, nome, data, sexo, ant);
+
+		tempoFinal = System.currentTimeMillis();
+
+		total = tempoFinal - tempoInicial;
+		soma = soma + total;
+		// tempoTotal = soma / 1000;
+		System.out.println(soma + " milessegundos");
 
 	}
 }
