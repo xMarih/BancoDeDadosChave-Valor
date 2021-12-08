@@ -197,6 +197,47 @@ public class Pntuario {
 		} catch (IOException e) {
 		}
 	}
+	
+	public void readByFilter(RandomAccessFile file, int key, String expressao) {
+		try {
+			if (file.length() == 0) {
+				System.out.println("Arquivo vazio");
+			} else {
+				file.seek(0);
+				int id = file.readInt();
+				file.seek(4);
+				int m = file.readInt();
+
+				int nbytes = 0;
+				char lap;
+				byte[] buffer = new byte[tamanho + m + 2];
+
+				for (int i = 0; i <= id; i++) {
+					file.seek(i * tamanho + 10);
+					lap = file.readChar();
+
+					if (lap == ' ') {
+						file.seek(i * tamanho + 10 + 2);
+						nbytes = file.read(buffer);
+						leitura(buffer);
+						if(this.cpf > key && expressao.equals("key>X")) {
+							imprimir();
+						}else if(this.cpf < key && expressao.equals("key<X")) {
+							imprimir();
+						}else if(this.cpf >= key && expressao.equals("key>=X")) {
+							imprimir();
+						}else if(this.cpf <= key && expressao.equals("key<=X")) {
+							imprimir();
+						}
+						
+						System.out.println();
+					}
+				}
+			}
+		} catch (IOException e) {
+		}
+	}
+	
 
 	public void delete(RandomAccessFile file, long pos, int chave) {
 
