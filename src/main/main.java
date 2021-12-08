@@ -50,12 +50,16 @@ public class main {
 				"[3] Mostrar registros\n" + 
 				"[4] Atualizar\n" +
 				"[5] Comprimir Algoritimo Huffman\n" + 
-				"[6] Descomprimir Algoritimo Huffman\n" + 
-				"[7] listar/filtar\n" + 
+				"[6] Descomprimir Algoritimo Huffman\n" +
+				"[7] Comprimir Algoritimo LZW\n" +
+				"[8] Descomprimir Algoritimo LZW\n" +
+				"[9] Listar/filtar\n" + 
 				"[0] SAIR");
 
 				op = sc.nextInt();
 				pt.setm(m);
+				
+				LZW lzw = new LZW();
 
 				switch (op) {
 
@@ -166,25 +170,60 @@ public class main {
 					break;
 				//////////////////////////////////////////////////////
 				case 5:
+					tempoInicial = System.currentTimeMillis();
+					
 					HuffmanCodificador.Codificar();
 					
 					//TODO comprimir
-					
+					tempoFinal = System.currentTimeMillis();
+					total = tempoFinal - tempoInicial;
+					soma = soma + total;
+					// tempoTotal = soma / 1000;
+					System.out.println(soma + " milessegundos");
 					
 					
 
 				//////////////////////////////////////////////////////
 					break;
 				case 6:
-					HuffmanDecoder.Decodificador();
-					//TODO descomprimir
+					tempoInicial = System.currentTimeMillis();
 					
+					HuffmanDecoder.Decodificador();
+					
+					//TODO descomprimir
+					tempoFinal = System.currentTimeMillis();
+					total = tempoFinal - tempoInicial;
+					soma = soma + total;
+					// tempoTotal = soma / 1000;
+					System.out.println(soma + " milessegundos");
 					
 					
 
 				//////////////////////////////////////////////////////
 					break;
 				case 7:		
+					tempoInicial = System.currentTimeMillis();
+					
+					lzw.compressFile();
+					
+					tempoFinal = System.currentTimeMillis();
+					total = tempoFinal - tempoInicial;
+					soma = soma + total;
+					// tempoTotal = soma / 1000;
+					System.out.println(soma + " milessegundos");
+					break;
+				case 8:
+					tempoInicial = System.currentTimeMillis();
+					
+					lzw.decompressFile();
+					
+					tempoFinal = System.currentTimeMillis();
+					total = tempoFinal - tempoInicial;
+					soma = soma + total;
+					// tempoTotal = soma / 1000;
+					System.out.println(soma + " milessegundos");
+					break;
+				case 9:
 					sc.nextLine();
 					System.out.println("Informe a expressao: (key>X | key<X | key>=X | key<=X)");
 					expressao = sc.nextLine();
@@ -205,8 +244,6 @@ public class main {
 					soma = soma + total;
 					// tempoTotal = soma / 1000;
 					System.out.println(soma + " milessegundos");
-					
-
 				//////////////////////////////////////////////////////
 					break;
 				
