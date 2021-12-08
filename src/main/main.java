@@ -10,19 +10,17 @@ public class main {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		int cpf, m, a = 0, b = 0, op = 0;
+		int cpf, m = 100, n = 5, a = 0, b = 0, op = 0;
 		long soma = 0, tempoInicial, tempoFinal, total = 0;
 		float tempoTotal;
 		String nome, data, sexo, ant, expressao;
 
 		Pntuario pt = new Pntuario();
+		pt.setm(m);
 
 		RandomAccessFile arqBucket;
+		
 		System.out.println("\tSISTEMA DE PONTUÁRIO");
-		System.out.println("Informe o valor de 'm': ");
-		m = sc.nextInt();
-		pt.setm(m);
-		sc.nextLine();
 		System.out.println("Nome do arquivo mestre: ");
 		String mestre = sc.nextLine();
 		sc.nextLine();
@@ -32,9 +30,7 @@ public class main {
 		System.out.println("Nome do Bucket: ");
 		String buck = sc.nextLine();
 		sc.nextLine();
-		System.out.println("Informe o valor de n: ");
-		int n = sc.nextInt();
-		sc.nextLine();
+	
 		// System.out.println("Informe a P.G.: ");
 		// byte pg = sc.nextByte();
 		sc.nextLine();
