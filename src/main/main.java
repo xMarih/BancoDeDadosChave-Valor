@@ -13,7 +13,7 @@ public class main {
 		int cpf, m, a = 0, b = 0, op = 0;
 		long soma = 0, tempoInicial, tempoFinal, total = 0;
 		float tempoTotal;
-		String nome, data, sexo, ant;
+		String nome, data, sexo, ant, expressao;
 
 		Pntuario pt = new Pntuario();
 
@@ -43,18 +43,19 @@ public class main {
 		try {
 
 			arq = new RandomAccessFile(
-					"C:\\Users\\mariana\\eclipse-workspace\\Banco de Dados Chave-Valor\\src\\dados" + mestre, "rw");
+					"src/dados" + mestre, "rw");
 			HashPrincipal ab = new HashPrincipal(n, dir, buck);
 			do {
 
-				System.out.println("Menu");
+				System.out.println("-------Menu-------");
 				System.out.println(
-				"[1] Criar\n " + 
-				"[2] Apagar\n " + 
-				"[3] Mostrar registros\n " + 
+				"[1] Criar\n" + 
+				"[2] Apagar\n" + 
+				"[3] Mostrar registros\n" + 
 				"[4] Atualizar\n" +
 				"[5] Comprimir\n" + 
 				"[6] Descomprimir\n" + 
+				"[7] listar/filtar\n" + 
 				"[0] SAIR");
 
 				op = sc.nextInt();
@@ -180,6 +181,31 @@ public class main {
 					//TODO descomprimir
 					
 					
+					
+
+				//////////////////////////////////////////////////////
+					break;
+				case 7:		
+					sc.nextLine();
+					System.out.println("Informe a expressao: (key>X | key<X | key>=X | key<=X)");
+					expressao = sc.nextLine();
+					sc.nextLine();
+					System.out.println("Informe o valor de X:");
+					int x = sc.nextInt();
+					
+					tempoInicial = System.currentTimeMillis();
+					
+					//int bus = (int) ab.busca(cpf);
+					//pt.busca(arq, bus);
+					
+					pt.readByFilter(arq, x, expressao);
+					
+					
+					tempoFinal = System.currentTimeMillis();
+					total = tempoFinal - tempoInicial;
+					soma = soma + total;
+					// tempoTotal = soma / 1000;
+					System.out.println(soma + " milessegundos");
 					
 
 				//////////////////////////////////////////////////////

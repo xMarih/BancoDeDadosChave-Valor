@@ -19,9 +19,9 @@ public class HashPrincipal {
 		arqBucket = nc;
 
 		arqDir = new RandomAccessFile(
-				"C:\\Users\\mariana\\eclipse-workspace\\Banco de Dados Chave-Valor\\src\\dados" + arqDiretorio, "rw");
+				"src/dados" + arqDiretorio, "rw");
 		arqBuc = new RandomAccessFile(
-				"C:\\Users\\mariana\\eclipse-workspace\\Banco de Dados Chave-Valor\\src\\dados" + arqBucket, "rw");
+				"src/dados" + arqBucket, "rw");
 
 		// Se o diretorio ou os buckets estiverem vazios, cria um novo diretorio e lista
 		// de buckets
@@ -137,6 +137,7 @@ public class HashPrincipal {
 
 		return b.busca(chave);
 	}
+	
 
 	public boolean remove(int chave) throws Exception {
 
