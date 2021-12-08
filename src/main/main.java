@@ -33,7 +33,7 @@ public class main {
 	
 		// System.out.println("Informe a P.G.: ");
 		// byte pg = sc.nextByte();
-		sc.nextLine();
+		
 		RandomAccessFile arq;
 
 		try {
