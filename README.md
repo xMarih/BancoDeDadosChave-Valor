@@ -51,3 +51,23 @@ Esse trabalho será avaliado da seguinte forma:
 
 • Realizar a avaliação de desempenho da sua solução. (3 pontos)
 
+# Avaliação de Desempenho dos Algoritmos
+
+Este projeto foi divido em 3 partes importantes que iremos analisar o desempenho, cada uma destas possui implementações de algoritmos conhecidos e ensinados na disciplina de Algoritmo e Estrutura de Dados III. 
+
+•	Inserir / Remover / Buscar / Atualizar: Neste algoritmo o principal efeito de otimização foi utilizar um arquivo indexado para armazenar os dados criados. O algoritmo para busca utilizado 
+
+Inserir: O seu tempo de execução foi em média de 
+Remover: O seu tempo de execução foi em média de
+Buscar: O seu tempo de execução foi em média de
+
+
+•	Listar / Filtrar: Para a filtragem e listagem foi utilizado a classe “readByFilter” pelos testes feitos o algoritmo teve a complexidade de o(n) e possuiu em média o tempo de
+
+•	Compactar / Descompactar: Utilizamos dois algoritmos para desenvolver a compactação e descompactação:
+
+Código de Huffman: Este algoritmo possui duas chamadas na main “HuffmanCodificador.Codificar” e “HuffmanDecoder.Decodificador” pelos testes feitos apresentou a complexidade o(n) em um tempo médio de execução de aproximadamente 
+
+Algoritmo LZW: Este algoritmo possui duas chamadas na main “lzw.compressFile” e “lzw.decompressFile” pelos testes feitos apresentou a complexidade o(n) em um tempo médio de execução de aproximadamente 
+
+
