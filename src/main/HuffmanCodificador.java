@@ -10,9 +10,9 @@ public class HuffmanCodificador {
 		long duration = 0;
 		
 		FileReader inputStream = null;
-		String fileName = "C:\\Users\\Guilherme\\Documents\\AquivoTest\\Arquivoo.txt";
-		FileOutputStream outputStream = new FileOutputStream(new File("C:\\Users\\Guilherme\\Documents\\AquivoTest\\compressed.txt"));
-		FileOutputStream codeStream = new FileOutputStream(new File("C:\\Users\\Guilherme\\Documents\\AquivoTest\\codes.txt"));
+		String fileName = "src/dados/BancoDeDados.txt";
+		FileOutputStream outputStream = new FileOutputStream(new File("src/dados/compressed.txt"));
+		FileOutputStream codeStream = new FileOutputStream(new File("src/dados/codes.txt"));
 		
 		try {
 				inputStream = new FileReader(fileName);

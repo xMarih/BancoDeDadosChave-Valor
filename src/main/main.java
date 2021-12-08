@@ -49,8 +49,8 @@ public class main {
 				"[2] Apagar\n" + 
 				"[3] Mostrar registros\n" + 
 				"[4] Atualizar\n" +
-				"[5] Comprimir\n" + 
-				"[6] Descomprimir\n" + 
+				"[5] Comprimir Algoritimo Huffman\n" + 
+				"[6] Descomprimir Algoritimo Huffman\n" + 
 				"[7] listar/filtar\n" + 
 				"[0] SAIR");
 
@@ -166,6 +166,8 @@ public class main {
 					break;
 				//////////////////////////////////////////////////////
 				case 5:
+					HuffmanCodificador.Codificar();
+					
 					//TODO comprimir
 					
 					
@@ -174,6 +176,7 @@ public class main {
 				//////////////////////////////////////////////////////
 					break;
 				case 6:
+					HuffmanDecoder.Decodificador();
 					//TODO descomprimir
 					
 					

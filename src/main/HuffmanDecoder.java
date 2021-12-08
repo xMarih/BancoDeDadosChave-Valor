@@ -18,9 +18,9 @@ package main;
 			long duration = 0;
 			
 			FileReader inputStream = null;
-			String fileName = "C:\\Users\\Guilherme\\Documents\\AquivoTest\\codes.txt";
-			String fileTextName = "C:\\Users\\Guilherme\\Documents\\AquivoTest\\compressed.txt";
-			FileOutputStream outputStream = new FileOutputStream(new File("C:\\Users\\Guilherme\\Documents\\AquivoTest\\uncompressed.txt"));
+			String fileName = "src/dados/codes.txt";
+			String fileTextName = "src/dados/compressed.txt";
+			FileOutputStream outputStream = new FileOutputStream(new File("C:src/dados/uncompressed.txt"));
 		
 			
 			try {
