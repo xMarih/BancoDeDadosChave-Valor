@@ -70,4 +70,6 @@ Código de Huffman: Este algoritmo possui duas chamadas na main “HuffmanCodifi
 
 Algoritmo LZW: Este algoritmo possui duas chamadas na main “lzw.compressFile” e “lzw.decompressFile” pelos testes feitos apresentou a complexidade o(n) em um tempo médio de execução de aproximadamente 
 
+# Diagrama de Classes
 
+![ClassDiagram-alt-tag](https://github.com/xMarih/BancoDeDadosChave-Valor/blob/master/img/Class%20Diagram.png)
