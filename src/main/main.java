@@ -22,7 +22,7 @@ public class main {
 
 		RandomAccessFile arqBucket;
 		
-		System.out.println("\tSISTEMA DE PONTUÁRIO");
+		System.out.println("\tSISTEMA DE PONTUÃRIO");
 		
 		RandomAccessFile arq;
 
@@ -56,7 +56,7 @@ public class main {
 					case 0:
 						System.out.print("Encerrando...");
 						break;
-					////////////////////////////////////////////////////////////////////////
+						////////////////////////////////////////////////////////////////
 					case 1:
 						do {
 							System.out.print("CPF: ");
@@ -75,7 +75,7 @@ public class main {
 							sexo = sc.nextLine();
 	
 							sc.nextLine();
-							System.out.print("Anotação: \n");
+							System.out.print("AnotaÃ§Ã£o: \n");
 							ant = sc.nextLine();
 	
 							tempoInicial = System.currentTimeMillis();
@@ -94,7 +94,7 @@ public class main {
 							total = tempoFinal - tempoInicial;
 							soma = soma + total;
 	
-							System.out.println("deseja inserir mais registros?\n [1] Sim\t [2] Não");
+							System.out.println("deseja inserir mais registros?\n [1] Sim\t [2] NÃ£o");
 							b = sc.nextInt();
 						} while (b == 1);
 	
@@ -152,7 +152,7 @@ public class main {
 						HashPrincipal.atualizar(arq, cpf, m);
 	
 						break;
-						//////////////////////////////////////////////////////
+						//////////////////////////////////////////////////////////////
 					case 5:
 						tempoInicial = System.currentTimeMillis();
 						
@@ -165,7 +165,7 @@ public class main {
 						System.out.println(soma + " milessegundos");
 						
 						break;
-						////////////////////////////////////////////////////////////////////////
+						////////////////////////////////////////////////////////////////
 					case 6:
 						tempoInicial = System.currentTimeMillis();
 						
@@ -178,7 +178,7 @@ public class main {
 						System.out.println(soma + " milessegundos");
 						
 						break;
-						////////////////////////////////////////////////////////////////////////
+						////////////////////////////////////////////////////////////////
 					case 7:		
 						tempoInicial = System.currentTimeMillis();
 						
@@ -190,7 +190,7 @@ public class main {
 						// tempoTotal = soma / 1000;
 						System.out.println(soma + " milessegundos");
 						break;
-						////////////////////////////////////////////////////////////////////////
+						////////////////////////////////////////////////////////////////
 					case 8:
 						tempoInicial = System.currentTimeMillis();
 						
@@ -203,7 +203,7 @@ public class main {
 						System.out.println(soma + " milessegundos");
 						
 						break;
-						////////////////////////////////////////////////////////////////////////
+						////////////////////////////////////////////////////////////////
 					case 9:
 						sc.nextLine();
 						System.out.println("Informe a expressao: (key>X | key<X | key>=X | key<=X)");
@@ -227,9 +227,9 @@ public class main {
 						System.out.println(soma + " milessegundos");
 					
 						break;
-						////////////////////////////////////////////////////////////////////////
+						////////////////////////////////////////////////////////////////
 					default:
-						System.out.println("Opção Inválida");
+						System.out.println("OpÃ§Ã£o InvÃ¡lida");
 						break;
 				}
 			} while (op != 0);
