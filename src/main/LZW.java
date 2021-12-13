@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class LZW {
 
     public HashMap compdic, decompdic;
-    String fileName = "BancoDeDados.txt";
+    String fileName = "src/dados/BancoDeDados.txt";
     short lastcode = 0, dlastcode = 0;
 
     LZW() {
